@@ -3,128 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Undangan Pernikahan</title>
+<title>Undangan Pernikahan | Alya & Fajar</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: #f8f3ed;
-  color: #4b4038;
-  text-align: center;
+html{
+  scroll-behavior:smooth;
 }
 
-.cover {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  background: linear-gradient(180deg, #f8eee5, #eee1d3);
+body{
+  font-family:Georgia,serif;
+  background:#f8f4ef;
+  color:#51463e;
+  text-align:center;
 }
 
-.cover h4 {
-  letter-spacing: 4px;
-  margin-bottom: 15px;
+.cover{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 20px;
+  background:
+    linear-gradient(rgba(255,250,245,.82),rgba(255,250,245,.88)),
+    radial-gradient(circle at top left,#d8c3ad,transparent 35%),
+    radial-gradient(circle at bottom right,#cdb69f,transparent 35%);
 }
 
-.cover h1 {
-  font-size: 48px;
-  margin: 10px 0;
+.cover-box{
+  width:100%;
+  max-width:430px;
+  padding:45px 25px;
+  border:1px solid #c8b39e;
+  border-radius:30px;
+  background:rgba(255,255,255,.72);
+  box-shadow:0 15px 50px rgba(80,60,45,.12);
 }
 
-.cover p {
-  font-size: 18px;
+.small{
+  font-size:12px;
+  letter-spacing:5px;
+  margin-bottom:22px;
 }
 
-button {
-  margin-top: 25px;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 30px;
-  background: #806b5c;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+.flower{
+  font-size:45px;
+  margin-bottom:15px;
 }
 
-section {
-  padding: 60px 25px;
-  max-width: 700px;
-  margin: auto;
+.cover h1{
+  font-size:43px;
+  font-weight:normal;
+  margin:10px 0;
+  color:#6c5749;
 }
 
-h2 {
-  font-size: 32px;
+.date{
+  margin:18px 0;
+  font-size:16px;
 }
 
-.card {
-  background: white;
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.open-btn{
+  border:0;
+  padding:14px 30px;
+  border-radius:30px;
+  background:#806957;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:15px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+#undangan{
+  display:none;
 }
 
-.gallery div {
-  height: 180px;
-  background: #ddd0c4;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #77685d;
+section{
+  padding:70px 22px;
+  max-width:650px;
+  margin:auto;
 }
 
-footer {
-  padding: 50px 20px;
-  background: #e9dbce;
+.section-title{
+  font-size:30px;
+  color:#6c5749;
+  margin:15px 0 20px;
+  font-weight:normal;
 }
 
-#undangan {
-  display: none;
+.line{
+  width:70px;
+  height:1px;
+  background:#bda58f;
+  margin:20px auto;
+}
+
+.names{
+  font-size:38px;
+  color:#6c5749;
+  margin:10px;
+}
+
+.amp{
+  font-size:25px;
+  margin:12px;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  padding:28px 20px;
+  margin:20px 0;
+  box-shadow:0 8px 30px rgba(70,50,40,.08);
+}
+
+.card h3{
+  color:#806957;
+  margin-bottom:12px;
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+.time{
+  background:#eee4da;
+  border-radius:15px;
+  padding:14px 5px;
+}
+
+.time strong{
+  display:block;
+  font-size:21px;
+  color:#6c5749;
+}
+
+.time span{
+  font-size:11px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.photo{
+  height:190px;
+  border-radius:18px;
+  background:#e1d5ca;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#806f62;
+  overflow:hidden;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.map-btn,
+.wa-btn{
+  display:inline-block;
+  text-decoration:none;
+  border:0;
+  padding:13px 25px;
+  border-radius:30px;
+  background:#806957;
+  color:white;
+  margin-top:12px;
+}
+
+footer{
+  padding:65px 20px;
+  background:#e9ded3;
+}
+
+footer h2{
+  font-weight:normal;
+  font-size:30px;
+  color:#6c5749;
+  margin-bottom:15px;
+}
+
+@media(max-width:380px){
+  .cover h1{
+    font-size:36px;
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- COVER -->
 <div class="cover" id="cover">
 
-  <h4>THE WEDDING</h4>
+  <div class="cover-box">
 
-  <h1>Alya & Fajar</h1>
+    <div class="small">THE WEDDING</div>
 
-  <p>20 Desember 2026</p>
+    <div class="flower">🌸</div>
 
-  <p>Kepada Yth.<br>
-  Bapak/Ibu/Saudara/i</p>
+    <p>We are getting married</p>
 
-  <button onclick="bukaUndangan()">
-    Buka Undangan
-  </button>
+    <h1>Alya & Fajar</h1>
+
+    <div class="line"></div>
+
+    <p class="date">20 Desember 2026</p>
+
+    <p>
+      Kepada Yth.<br>
+      Bapak/Ibu/Saudara/i
+    </p>
+
+    <button class="open-btn" onclick="bukaUndangan()">
+      Buka Undangan
+    </button>
+
+  </div>
 
 </div>
 
 
+<!-- ISI UNDANGAN -->
 <div id="undangan">
 
 <section>
 
-  <h4>ASSALAMUALAIKUM</h4>
+  <div class="small">ASSALAMUALAIKUM</div>
 
-  <h2>Dengan Bahagia</h2>
+  <h2 class="section-title">
+    Dengan Bahagia
+  </h2>
+
+  <div class="line"></div>
 
   <p>
     Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
@@ -137,17 +265,56 @@ footer {
 
 <section>
 
+  <div class="flower">🌿</div>
+
+  <p>THE BRIDE & THE GROOM</p>
+
+  <div class="names">Alya</div>
+
+  <p>Putri dari Bapak & Ibu</p>
+
+  <div class="amp">&</div>
+
+  <div class="names">Fajar</div>
+
+  <p>Putra dari Bapak & Ibu</p>
+
+</section>
+
+
+<section>
+
+  <div class="small">SAVE THE DATE</div>
+
+  <h2 class="section-title">
+    Menuju Hari Bahagia
+  </h2>
+
   <div class="card">
 
-    <h2>Alya</h2>
+    <div class="countdown">
 
-    <p>Putri dari Bapak & Ibu</p>
+      <div class="time">
+        <strong id="days">0</strong>
+        <span>Hari</span>
+      </div>
 
-    <h2>&</h2>
+      <div class="time">
+        <strong id="hours">0</strong>
+        <span>Jam</span>
+      </div>
 
-    <h2>Fajar</h2>
+      <div class="time">
+        <strong id="minutes">0</strong>
+        <span>Menit</span>
+      </div>
 
-    <p>Putra dari Bapak & Ibu</p>
+      <div class="time">
+        <strong id="seconds">0</strong>
+        <span>Detik</span>
+      </div>
+
+    </div>
 
   </div>
 
@@ -156,14 +323,17 @@ footer {
 
 <section>
 
-  <h2>Akad & Resepsi</h2>
+  <div class="small">OUR SPECIAL DAY</div>
+
+  <h2 class="section-title">
+    Akad & Resepsi
+  </h2>
 
   <div class="card">
 
     <h3>Akad Nikah</h3>
 
     <p>20 Desember 2026</p>
-
     <p>09.00 WIB</p>
 
   </div>
@@ -173,7 +343,6 @@ footer {
     <h3>Resepsi</h3>
 
     <p>20 Desember 2026</p>
-
     <p>11.00 - 14.00 WIB</p>
 
   </div>
@@ -183,11 +352,27 @@ footer {
 
 <section>
 
-  <h2>Countdown</h2>
+  <div class="small">LOCATION</div>
+
+  <h2 class="section-title">
+    Lokasi Acara
+  </h2>
 
   <div class="card">
 
-    <h2 id="countdown">Loading...</h2>
+    <h3>Gedung Bahagia</h3>
+
+    <p>
+      Jl. Contoh No. 123<br>
+      Indonesia
+    </p>
+
+    <a
+      class="map-btn"
+      href="https://maps.google.com/?q=Gedung+Bahagia"
+      target="_blank">
+      📍 Buka Google Maps
+    </a>
 
   </div>
 
@@ -196,33 +381,18 @@ footer {
 
 <section>
 
-  <h2>Lokasi</h2>
+  <div class="small">MEMORIES</div>
 
-  <div class="card">
-
-    <p>Gedung Bahagia</p>
-
-    <p>Jl. Contoh No. 123</p>
-
-    <button onclick="bukaMaps()">
-      Lihat Lokasi
-    </button>
-
-  </div>
-
-</section>
-
-
-<section>
-
-  <h2>Galeri</h2>
+  <h2 class="section-title">
+    Galeri Foto
+  </h2>
 
   <div class="gallery">
 
-    <div>Foto 1</div>
-    <div>Foto 2</div>
-    <div>Foto 3</div>
-    <div>Foto 4</div>
+    <div class="photo">Foto 1</div>
+    <div class="photo">Foto 2</div>
+    <div class="photo">Foto 3</div>
+    <div class="photo">Foto 4</div>
 
   </div>
 
@@ -231,15 +401,52 @@ footer {
 
 <section>
 
-  <h2>RSVP</h2>
+  <div class="small">RSVP</div>
+
+  <h2 class="section-title">
+    Konfirmasi Kehadiran
+  </h2>
 
   <div class="card">
 
-    <p>Konfirmasi kehadiran melalui WhatsApp</p>
+    <p>
+      Mohon konfirmasi kehadiran melalui WhatsApp.
+    </p>
 
-    <button onclick="rsvp()">
-      Konfirmasi Kehadiran
-    </button>
+    <a
+      class="wa-btn"
+      href="https://wa.me/6281234567890?text=Halo%20Alya%20dan%20Fajar,%20saya%20akan%20hadir."
+      target="_blank">
+      💌 Konfirmasi via WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="small">WEDDING GIFT</div>
+
+  <h2 class="section-title">
+    Hadiah Pernikahan
+  </h2>
+
+  <div class="card">
+
+    <p>
+      Doa restu Anda merupakan hadiah terindah
+      bagi kami.
+    </p>
+
+    <br>
+
+    <p>
+      BCA<br>
+      <strong>1234567890</strong><br>
+      Alya
+    </p>
 
   </div>
 
@@ -248,9 +455,17 @@ footer {
 
 <footer>
 
+  <div class="flower">🌸</div>
+
   <h2>Alya & Fajar</h2>
 
-  <p>Terima kasih atas doa dan kehadirannya ❤️</p>
+  <p>
+    Terima kasih atas doa dan kehadiran Anda.
+  </p>
+
+  <br>
+
+  <p>❤️</p>
 
 </footer>
 
@@ -259,45 +474,64 @@ footer {
 
 <script>
 
-function bukaUndangan() {
-  document.getElementById("cover").style.display = "none";
-  document.getElementById("undangan").style.display = "block";
+function bukaUndangan(){
+
+  document.getElementById("cover").style.display="none";
+
+  document.getElementById("undangan").style.display="block";
+
   window.scrollTo(0,0);
+
 }
 
-function bukaMaps() {
-  window.open(
-    "https://maps.google.com/?q=Gedung+Bahagia",
-    "_blank"
-  );
+
+var targetDate =
+new Date("December 20, 2026 09:00:00").getTime();
+
+
+function updateCountdown(){
+
+  var now = new Date().getTime();
+
+  var distance = targetDate - now;
+
+  if(distance <= 0){
+
+    document.getElementById("days").innerHTML="0";
+    document.getElementById("hours").innerHTML="0";
+    document.getElementById("minutes").innerHTML="0";
+    document.getElementById("seconds").innerHTML="0";
+
+    return;
+  }
+
+  var days =
+  Math.floor(distance/(1000*60*60*24));
+
+  var hours =
+  Math.floor((distance/(1000*60*60))%24);
+
+  var minutes =
+  Math.floor((distance/(1000*60))%60);
+
+  var seconds =
+  Math.floor((distance/1000)%60);
+
+
+  document.getElementById("days").innerHTML=days;
+
+  document.getElementById("hours").innerHTML=hours;
+
+  document.getElementById("minutes").innerHTML=minutes;
+
+  document.getElementById("seconds").innerHTML=seconds;
+
 }
 
-function rsvp() {
-  window.open(
-    "https://wa.me/6281234567890?text=Halo,%20saya%20akan%20hadir%20di%20pernikahan%20Alya%20dan%20Fajar.",
-    "_blank"
-  );
-}
 
-var tanggal = new Date("December 20, 2026 09:00:00").getTime();
+updateCountdown();
 
-setInterval(function() {
-
-  var sekarang = new Date().getTime();
-  var jarak = tanggal - sekarang;
-
-  var hari = Math.floor(jarak / (1000 * 60 * 60 * 24));
-  var jam = Math.floor((jarak / (1000 * 60 * 60)) % 24);
-  var menit = Math.floor((jarak / (1000 * 60)) % 60);
-  var detik = Math.floor((jarak / 1000) % 60);
-
-  document.getElementById("countdown").innerHTML =
-    hari + " Hari " +
-    jam + " Jam " +
-    menit + " Menit " +
-    detik + " Detik";
-
-}, 1000);
+setInterval(updateCountdown,1000);
 
 </script>
 
