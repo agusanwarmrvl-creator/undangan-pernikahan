@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #f8f3ed;
+  color: #4b4038;
+  text-align: center;
+}
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(180deg, #f8eee5, #eee1d3);
+}
+
+.cover h4 {
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.cover h1 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.cover p {
+  font-size: 18px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #806b5c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+section {
+  padding: 60px 25px;
+  max-width: 700px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery div {
+  height: 180px;
+  background: #ddd0c4;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #77685d;
+}
+
+footer {
+  padding: 50px 20px;
+  background: #e9dbce;
+}
+
+#undangan {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cover" id="cover">
+
+  <h4>THE WEDDING</h4>
+
+  <h1>Alya & Fajar</h1>
+
+  <p>20 Desember 2026</p>
+
+  <p>Kepada Yth.<br>
+  Bapak/Ibu/Saudara/i</p>
+
+  <button onclick="bukaUndangan()">
+    Buka Undangan
+  </button>
+
+</div>
+
+
+<div id="undangan">
+
+<section>
+
+  <h4>ASSALAMUALAIKUM</h4>
+
+  <h2>Dengan Bahagia</h2>
+
+  <p>
+    Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
+    kami mengundang Bapak/Ibu/Saudara/i untuk hadir
+    dalam acara pernikahan kami.
+  </p>
+
+</section>
+
+
+<section>
+
+  <div class="card">
+
+    <h2>Alya</h2>
+
+    <p>Putri dari Bapak & Ibu</p>
+
+    <h2>&</h2>
+
+    <h2>Fajar</h2>
+
+    <p>Putra dari Bapak & Ibu</p>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <h2>Akad & Resepsi</h2>
+
+  <div class="card">
+
+    <h3>Akad Nikah</h3>
+
+    <p>20 Desember 2026</p>
+
+    <p>09.00 WIB</p>
+
+  </div>
+
+  <div class="card">
+
+    <h3>Resepsi</h3>
+
+    <p>20 Desember 2026</p>
+
+    <p>11.00 - 14.00 WIB</p>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <h2>Countdown</h2>
+
+  <div class="card">
+
+    <h2 id="countdown">Loading...</h2>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <h2>Lokasi</h2>
+
+  <div class="card">
+
+    <p>Gedung Bahagia</p>
+
+    <p>Jl. Contoh No. 123</p>
+
+    <button onclick="bukaMaps()">
+      Lihat Lokasi
+    </button>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <h2>Galeri</h2>
+
+  <div class="gallery">
+
+    <div>Foto 1</div>
+    <div>Foto 2</div>
+    <div>Foto 3</div>
+    <div>Foto 4</div>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <h2>RSVP</h2>
+
+  <div class="card">
+
+    <p>Konfirmasi kehadiran melalui WhatsApp</p>
+
+    <button onclick="rsvp()">
+      Konfirmasi Kehadiran
+    </button>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <h2>Alya & Fajar</h2>
+
+  <p>Terima kasih atas doa dan kehadirannya ❤️</p>
+
+</footer>
+
+</div>
+
+
+<script>
+
+function bukaUndangan() {
+  document.getElementById("cover").style.display = "none";
+  document.getElementById("undangan").style.display = "block";
+  window.scrollTo(0,0);
+}
+
+function bukaMaps() {
+  window.open(
+    "https://maps.google.com/?q=Gedung+Bahagia",
+    "_blank"
+  );
+}
+
+function rsvp() {
+  window.open(
+    "https://wa.me/6281234567890?text=Halo,%20saya%20akan%20hadir%20di%20pernikahan%20Alya%20dan%20Fajar.",
+    "_blank"
+  );
+}
+
+var tanggal = new Date("December 20, 2026 09:00:00").getTime();
+
+setInterval(function() {
+
+  var sekarang = new Date().getTime();
+  var jarak = tanggal - sekarang;
+
+  var hari = Math.floor(jarak / (1000 * 60 * 60 * 24));
+  var jam = Math.floor((jarak / (1000 * 60 * 60)) % 24);
+  var menit = Math.floor((jarak / (1000 * 60)) % 60);
+  var detik = Math.floor((jarak / 1000) % 60);
+
+  document.getElementById("countdown").innerHTML =
+    hari + " Hari " +
+    jam + " Jam " +
+    menit + " Menit " +
+    detik + " Detik";
+
+}, 1000);
+
+</script>
+
+</body>
+</html>
