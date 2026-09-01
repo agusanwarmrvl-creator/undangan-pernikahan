@@ -3,52 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alya & Fajar | Wedding Invitation</title>
+
+<title>Alya & Fajar — Wedding Invitation</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-  background:#f8f3ed;
-  color:#5a493d;
-  font-family:Montserrat,sans-serif;
+  background:#f7f1e9;
+  color:#57463a;
+  font-family:'Montserrat',sans-serif;
   overflow-x:hidden;
 }
 
+section{
+  max-width:720px;
+  margin:auto;
+  padding:75px 22px;
+}
+
 h1,h2,h3{
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
   font-weight:500;
 }
 
+.center{
+  text-align:center;
+}
+
+.gold{
+  color:#a27b4c;
+}
+
+.ornament{
+  font-size:32px;
+  color:#a27b4c;
+  margin-bottom:10px;
+}
+
+/* COVER */
+
 .cover{
-  min-height:100svh;
+  height:100svh;
+  max-width:none;
+  padding:0;
   position:relative;
   display:flex;
   align-items:flex-end;
   justify-content:center;
   overflow:hidden;
-  background:#6b5749;
+  background:#665346;
 }
 
 .cover img{
   position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  inset:0;
 }
 
 .cover::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    transparent 25%,
-    rgba(25,18,13,.78) 100%
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(0,0,0,.05) 25%,
+    rgba(0,0,0,.75) 100%
   );
 }
 
@@ -58,17 +91,16 @@ h1,h2,h3{
   color:white;
   text-align:center;
   padding:30px 20px 55px;
-  width:100%;
 }
 
-.cover-content .small{
-  letter-spacing:5px;
+.cover-label{
   font-size:10px;
+  letter-spacing:5px;
   text-transform:uppercase;
 }
 
 .cover h1{
-  font-size:68px;
+  font-size:72px;
   line-height:.85;
   margin:20px 0;
 }
@@ -76,48 +108,29 @@ h1,h2,h3{
 .cover-date{
   font-size:12px;
   letter-spacing:3px;
-  margin-bottom:25px;
+  margin-bottom:28px;
 }
 
-.open{
-  border:1px solid rgba(255,255,255,.7);
+.open-button{
+  border:1px solid rgba(255,255,255,.8);
   background:rgba(255,255,255,.12);
   color:white;
-  padding:14px 28px;
   border-radius:30px;
-  font-size:12px;
-  letter-spacing:1px;
+  padding:14px 28px;
+  font-size:11px;
+  letter-spacing:2px;
   backdrop-filter:blur(8px);
 }
 
-#content{
+/* CONTENT */
+
+#undangan{
   display:none;
 }
 
-section{
-  max-width:720px;
-  margin:auto;
-  padding:75px 22px;
-}
-
-.center{text-align:center}
-
-.ornament{
-  color:#a8865a;
-  font-size:32px;
-  margin-bottom:12px;
-}
-
-.small-title{
-  font-size:10px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:#a8865a;
-}
-
 .title{
-  font-size:47px;
-  margin:12px 0 20px;
+  font-size:48px;
+  margin:8px 0 20px;
 }
 
 .text{
@@ -126,24 +139,26 @@ section{
 }
 
 .divider{
-  width:70px;
+  width:60px;
   height:1px;
-  background:#cbb398;
+  background:#c9ad8d;
   margin:20px auto;
 }
+
+/* COUPLE */
 
 .couple{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:15px;
-  margin-top:30px;
 }
 
 .person{
   background:#fffaf5;
-  border-radius:22px;
   padding:12px;
-  box-shadow:0 10px 35px rgba(70,45,30,.08);
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(60,40,25,.08);
 }
 
 .person img{
@@ -155,7 +170,7 @@ section{
 
 .person h3{
   font-size:29px;
-  margin:13px 0 4px;
+  margin:12px 0 4px;
 }
 
 .person p{
@@ -163,30 +178,34 @@ section{
   line-height:1.7;
 }
 
+/* COUNTDOWN */
+
 .countdown{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  margin-top:25px;
 }
 
 .time{
   background:#fffaf5;
   border-radius:17px;
-  padding:15px 5px;
-  box-shadow:0 8px 25px rgba(70,45,30,.06);
+  padding:16px 4px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(60,40,25,.06);
 }
 
 .time b{
   display:block;
-  font-family:"Cormorant Garamond",serif;
-  font-size:29px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
 }
 
 .time span{
   font-size:8px;
   letter-spacing:1px;
 }
+
+/* EVENTS */
 
 .events{
   display:grid;
@@ -196,10 +215,10 @@ section{
 
 .card{
   background:#fffaf5;
-  padding:30px 20px;
   border-radius:23px;
+  padding:30px 20px;
   text-align:center;
-  box-shadow:0 8px 28px rgba(70,45,30,.07);
+  box-shadow:0 10px 30px rgba(60,40,25,.07);
 }
 
 .card h3{
@@ -212,27 +231,28 @@ section{
   line-height:1.9;
 }
 
-.btn{
+.button{
   display:inline-block;
   margin-top:15px;
   padding:12px 22px;
   border-radius:30px;
-  background:#705b4d;
+  background:#6a5547;
   color:white;
   text-decoration:none;
   font-size:10px;
   letter-spacing:1px;
 }
 
+/* STORY */
+
 .story{
-  border-left:1px solid #cbb398;
+  border-left:1px solid #c9ad8d;
   padding-left:20px;
-  text-align:left;
 }
 
 .story h3{
   font-size:28px;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .story p{
@@ -240,11 +260,12 @@ section{
   line-height:1.9;
 }
 
+/* GALLERY */
+
 .gallery{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
-  margin-top:25px;
 }
 
 .gallery img{
@@ -256,53 +277,61 @@ section{
 
 .gallery img:first-child{
   grid-column:span 2;
-  height:290px;
+  height:300px;
 }
 
+/* GIFT */
+
 .bank{
-  font-family:"Cormorant Garamond",serif;
-  font-size:31px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
   margin-top:15px;
 }
 
 .account{
-  font-size:20px;
+  font-size:19px;
   letter-spacing:2px;
   margin:5px 0;
 }
 
 .copy{
   border:0;
-  background:#705b4d;
+  background:#6a5547;
   color:white;
-  padding:11px 20px;
   border-radius:25px;
+  padding:11px 20px;
   font-size:10px;
 }
 
+/* FOOTER */
+
 footer{
-  background:#e9ded2;
+  background:#e9ddd0;
   text-align:center;
-  padding:65px 20px;
+  padding:70px 20px;
 }
 
 footer h2{
-  font-size:45px;
+  font-size:46px;
 }
+
+/* MUSIC */
 
 .music{
   position:fixed;
-  z-index:50;
+  z-index:99;
   right:16px;
   bottom:18px;
   width:48px;
   height:48px;
   border-radius:50%;
-  border:1px solid #cbb398;
+  border:1px solid #c9ad8d;
   background:#fffaf5;
-  color:#705b4d;
+  color:#6a5547;
   font-size:20px;
 }
+
+/* ANIMATION */
 
 .reveal{
   opacity:0;
@@ -318,11 +347,7 @@ footer h2{
 @media(max-width:520px){
 
   .cover h1{
-    font-size:58px;
-  }
-
-  .events{
-    grid-template-columns:1fr;
+    font-size:59px;
   }
 
   .couple{
@@ -331,6 +356,10 @@ footer h2{
 
   .person h3{
     font-size:25px;
+  }
+
+  .events{
+    grid-template-columns:1fr;
   }
 
   .gallery img{
@@ -346,23 +375,27 @@ footer h2{
 
 <body>
 
-<button class="music" onclick="musik()">♫</button>
+<!-- ================= COVER ================= -->
 
 <section class="cover">
 
-  <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+  <img src="IMG-20260901-WA0026.jpg" alt="Foto pasangan">
 
   <div class="cover-content">
 
-    <div class="small">THE WEDDING OF</div>
+    <div class="cover-label">
+      The Wedding Of
+    </div>
 
-    <h1>Alya<br>&amp; Fajar</h1>
+    <h1>
+      Alya<br>&amp; Fajar
+    </h1>
 
     <div class="cover-date">
       20 · 12 · 2026
     </div>
 
-    <button class="open" onclick="buka()">
+    <button class="open-button" onclick="bukaUndangan()">
       BUKA UNDANGAN
     </button>
 
@@ -371,13 +404,15 @@ footer h2{
 </section>
 
 
-<div id="content">
+<div id="undangan">
+
+<!-- ================= PEMBUKA ================= -->
 
 <section class="center reveal">
 
   <div class="ornament">❦</div>
 
-  <div class="small-title">
+  <div class="gold">
     Assalamualaikum
   </div>
 
@@ -390,11 +425,13 @@ footer h2{
   <p class="text">
     Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
     kami mengundang Bapak/Ibu/Saudara/i untuk hadir
-    dalam acara pernikahan kami.
+    dalam hari bahagia kami.
   </p>
 
 </section>
 
+
+<!-- ================= MEMPELAI ================= -->
 
 <section class="reveal">
 
@@ -402,19 +439,28 @@ footer h2{
 
     <div class="ornament">♡</div>
 
-    <div class="small-title">
-      The Bride & The Groom
+    <div class="gold">
+      The Bride &amp; The Groom
     </div>
 
+    <h2 class="title">
+      Mempelai
+    </h2>
+
   </div>
+
 
   <div class="couple">
 
     <div class="person">
 
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80">
+      <img
+        src="IMG-20260901-WA0031.jpg"
+        alt="Alya">
 
-      <h3>Alya</h3>
+      <h3>
+        Alya
+      </h3>
 
       <p>
         Putri dari<br>
@@ -423,11 +469,16 @@ footer h2{
 
     </div>
 
+
     <div class="person">
 
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80">
+      <img
+        src="IMG-20260901-WA0033.jpg"
+        alt="Fajar">
 
-      <h3>Fajar</h3>
+      <h3>
+        Fajar
+      </h3>
 
       <p>
         Putra dari<br>
@@ -441,13 +492,15 @@ footer h2{
 </section>
 
 
+<!-- ================= COUNTDOWN ================= -->
+
 <section class="reveal">
 
   <div class="center">
 
     <div class="ornament">✦</div>
 
-    <div class="small-title">
+    <div class="gold">
       Save The Date
     </div>
 
@@ -456,6 +509,7 @@ footer h2{
     </h2>
 
   </div>
+
 
   <div class="countdown">
 
@@ -484,15 +538,21 @@ footer h2{
 </section>
 
 
+<!-- ================= ACARA ================= -->
+
 <section class="reveal">
 
   <div class="events">
 
     <div class="card">
 
-      <div class="small-title">Akad Nikah</div>
+      <div class="gold">
+        AKAD NIKAH
+      </div>
 
-      <h3>09.00 WIB</h3>
+      <h3>
+        09.00 WIB
+      </h3>
 
       <p>
         Minggu, 20 Desember 2026<br>
@@ -505,9 +565,13 @@ footer h2{
 
     <div class="card">
 
-      <div class="small-title">Resepsi</div>
+      <div class="gold">
+        RESEPSI
+      </div>
 
-      <h3>11.00 WIB</h3>
+      <h3>
+        11.00 WIB
+      </h3>
 
       <p>
         Minggu, 20 Desember 2026<br>
@@ -522,13 +586,15 @@ footer h2{
 </section>
 
 
+<!-- ================= LOVE STORY ================= -->
+
 <section class="reveal">
 
   <div class="center">
 
     <div class="ornament">♡</div>
 
-    <div class="small-title">
+    <div class="gold">
       Our Story
     </div>
 
@@ -538,18 +604,23 @@ footer h2{
 
   </div>
 
+
   <div class="story">
 
-    <h3>Pertama Bertemu</h3>
+    <h3>
+      Pertama Bertemu
+    </h3>
 
     <p>
-      Tulis cerita pertama kali kedua mempelai bertemu
-      di bagian ini.
+      Tulis cerita pertama kali kedua mempelai
+      bertemu di bagian ini.
     </p>
 
     <br>
 
-    <h3>Hari Istimewa</h3>
+    <h3>
+      Menuju Pernikahan
+    </h3>
 
     <p>
       Tulis perjalanan cinta dan momen spesial
@@ -561,14 +632,16 @@ footer h2{
 </section>
 
 
+<!-- ================= GALERI ================= -->
+
 <section class="reveal">
 
   <div class="center">
 
     <div class="ornament">✧</div>
 
-    <div class="small-title">
-      Memories
+    <div class="gold">
+      Our Memories
     </div>
 
     <h2 class="title">
@@ -577,28 +650,41 @@ footer h2{
 
   </div>
 
+
   <div class="gallery">
 
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80">
+    <img
+      src="IMG-20260901-WA0026.jpg"
+      alt="Foto 1">
 
-    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80">
+    <img
+      src="IMG-20260901-WA0031.jpg"
+      alt="Foto 2">
 
-    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80">
+    <img
+      src="IMG-20260901-WA0032.jpg"
+      alt="Foto 3">
 
-    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80">
+    <img
+      src="IMG-20260901-WA0033.jpg"
+      alt="Foto 4">
 
   </div>
 
 </section>
 
 
+<!-- ================= LOKASI ================= -->
+
 <section class="reveal">
 
   <div class="card">
 
-    <div class="ornament">⌖</div>
+    <div class="ornament">
+      ⌖
+    </div>
 
-    <div class="small-title">
+    <div class="gold">
       Location
     </div>
 
@@ -606,17 +692,19 @@ footer h2{
       Lokasi Acara
     </h2>
 
-    <p>
+    <p class="text">
       Gedung Contoh<br>
       Jl. Contoh No. 123<br>
       Jakarta
     </p>
 
     <a
-      class="btn"
+      class="button"
       href="https://maps.google.com/"
       target="_blank">
+
       BUKA GOOGLE MAPS
+
     </a>
 
   </div>
@@ -624,13 +712,17 @@ footer h2{
 </section>
 
 
+<!-- ================= RSVP ================= -->
+
 <section class="reveal">
 
   <div class="card">
 
-    <div class="ornament">✉</div>
+    <div class="ornament">
+      ✉
+    </div>
 
-    <div class="small-title">
+    <div class="gold">
       RSVP
     </div>
 
@@ -643,10 +735,12 @@ footer h2{
     </p>
 
     <a
-      class="btn"
+      class="button"
       href="https://wa.me/6281234567890"
       target="_blank">
+
       KONFIRMASI VIA WHATSAPP
+
     </a>
 
   </div>
@@ -654,13 +748,17 @@ footer h2{
 </section>
 
 
+<!-- ================= WEDDING GIFT ================= -->
+
 <section class="reveal">
 
   <div class="card">
 
-    <div class="ornament">♡</div>
+    <div class="ornament">
+      ♡
+    </div>
 
-    <div class="small-title">
+    <div class="gold">
       Wedding Gift
     </div>
 
@@ -673,23 +771,34 @@ footer h2{
       bagi kami.
     </p>
 
+
     <div class="bank">
       BCA
     </div>
 
-    <div class="account" id="rekening">
+    <div
+      class="account"
+      id="rekening">
+
       1234567890
+
     </div>
 
     <p class="text">
       a.n. Alya
     </p>
 
-    <button class="copy" onclick="salinRekening()">
+    <button
+      class="copy"
+      onclick="salinRekening()">
+
       SALIN NOMOR REKENING
+
     </button>
 
+
     <br><br>
+
 
     <div class="bank">
       Kirim Hadiah
@@ -701,8 +810,12 @@ footer h2{
       Jakarta
     </p>
 
-    <button class="copy" onclick="salinAlamat()">
+    <button
+      class="copy"
+      onclick="salinAlamat()">
+
       SALIN ALAMAT
+
     </button>
 
   </div>
@@ -710,9 +823,13 @@ footer h2{
 </section>
 
 
+<!-- ================= PENUTUP ================= -->
+
 <section class="center reveal">
 
-  <div class="ornament">❦</div>
+  <div class="ornament">
+    ❦
+  </div>
 
   <h2 class="title">
     Terima Kasih
@@ -745,32 +862,46 @@ footer h2{
 
 <script>
 
-function buka(){
+/* BUKA UNDANGAN */
 
-  document.getElementById("content").style.display="block";
+function bukaUndangan(){
 
-  window.scrollTo(0,0);
+  document.getElementById("undangan").style.display="block";
+
+  window.scrollTo({
+    top:window.innerHeight,
+    behavior:"smooth"
+  });
 
 }
 
 
-const target =
+/* COUNTDOWN */
+
+const tanggalPernikahan =
 new Date("2026-12-20T09:00:00+07:00").getTime();
 
 
 function countdown(){
 
-  const now=new Date().getTime();
+  const sekarang =
+  new Date().getTime();
 
-  const jarak=target-now;
+  const jarak =
+  tanggalPernikahan - sekarang;
 
-  const hari=Math.floor(jarak/86400000);
 
-  const jam=Math.floor(jarak/3600000)%24;
+  const hari =
+  Math.floor(jarak / 86400000);
 
-  const menit=Math.floor(jarak/60000)%60;
+  const jam =
+  Math.floor(jarak / 3600000) % 24;
 
-  const detik=Math.floor(jarak/1000)%60;
+  const menit =
+  Math.floor(jarak / 60000) % 60;
+
+  const detik =
+  Math.floor(jarak / 1000) % 60;
 
 
   document.getElementById("hari").innerText =
@@ -787,10 +918,13 @@ function countdown(){
 
 }
 
+
 setInterval(countdown,1000);
 
 countdown();
 
+
+/* COPY REKENING */
 
 function salinRekening(){
 
@@ -803,6 +937,8 @@ function salinRekening(){
 }
 
 
+/* COPY ALAMAT */
+
 function salinAlamat(){
 
   navigator.clipboard.writeText(
@@ -814,36 +950,41 @@ function salinAlamat(){
 }
 
 
+/* ANIMASI SCROLL */
+
 const observer =
-new IntersectionObserver(entries=>{
+new IntersectionObserver(
 
-  entries.forEach(entry=>{
+  function(entries){
 
-    if(entry.isIntersecting){
+    entries.forEach(function(entry){
 
-      entry.target.classList.add("show");
+      if(entry.isIntersecting){
 
-    }
+        entry.target.classList.add("show");
 
-  });
+      }
 
-},{threshold:.12});
+    });
+
+  },
+
+  {
+    threshold:.12
+  }
+
+);
 
 
-document.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
 
+  observer.observe(element);
 
-function musik(){
-
-  alert(
-    "Fitur musik siap ditambahkan. " +
-    "Nanti kita masukkan lagu ke folder musik."
-  );
-
-}
+});
 
 </script>
 
 </body>
-  </html>
+    </html>
