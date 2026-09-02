@@ -262,6 +262,28 @@ button,.btn{
 }
 </style>
 
+
+<style id="luxury-look">
+:root{--lux-ink:#20201f;--lux-paper:#faf9f6;--lux-gold:#b69a5b;--lux-line:rgba(40,36,31,.16)}
+body{background:var(--lux-paper)!important;color:var(--lux-ink)!important}
+section{background:var(--lux-paper)!important}
+.cover{background-position:center!important;box-shadow:inset 0 -100px 120px rgba(0,0,0,.12)}
+.cover::after{background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.68))!important}
+.cover::before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.48);z-index:2;pointer-events:none}
+.cover-content{z-index:3!important}
+.cover-content h1{font-family:"Cormorant Garamond",Georgia,serif!important;font-weight:500!important;letter-spacing:.04em!important;text-shadow:0 4px 24px rgba(0,0,0,.38)}
+.cover-content p{letter-spacing:.25em!important;font-size:10px!important}
+.open-btn,.btn-open{border:1px solid rgba(255,255,255,.72)!important;border-radius:999px!important;background:rgba(255,255,255,.10)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;letter-spacing:.17em!important;box-shadow:0 10px 35px rgba(0,0,0,.18)!important}
+section h2{font-family:"Cormorant Garamond",Georgia,serif!important;font-weight:500!important;letter-spacing:.02em!important}
+section h2::after{content:"✦";display:block;color:var(--lux-gold);font-family:Georgia,serif;font-size:11px;margin:10px auto 0;opacity:.8}
+.card,.person-card{background:rgba(255,255,255,.86)!important;border:1px solid var(--lux-line)!important;border-radius:3px!important;box-shadow:0 18px 45px rgba(35,30,24,.08)!important}
+.person-card img{border-radius:2px!important;border:0!important;box-shadow:none!important;filter:grayscale(.12)}
+.gallery{gap:9px!important}.gallery-item{border-radius:2px!important;box-shadow:0 12px 32px rgba(35,30,24,.10)!important}.gallery-item img{filter:grayscale(.12)}
+.event{border-radius:2px!important;background:#252423!important;box-shadow:0 15px 35px rgba(20,18,16,.12)}.event:before{border-color:rgba(182,154,91,.48)!important}
+.countdown,.countdown-container{gap:7px!important}.countdown>*,.countdown-container>*{border:1px solid var(--lux-line)!important;border-radius:2px!important;background:#fff!important}
+.music-note{display:none!important}
+@media(max-width:600px){.cover::before{inset:11px}.section{padding-left:18px!important;padding-right:18px!important}}
+</style>
 </head>
 <body>
 <div class="p5-glow g1" aria-hidden="true"></div>
@@ -369,34 +391,4 @@ function setData(){
  gallery.innerHTML=DATA.galeri.map(x=>`<img src="${x}" onclick="zoomPhoto(this.src)" alt="Galeri">`).join("");
 }
 function zoomPhoto(src){bigPhoto.src=src;lightbox.style.display='grid'}
-function copyText(id){navigator.clipboard.writeText(document.getElementById(id).textContent);alert("Berhasil disalin");}
-function copyAddress(){navigator.clipboard.writeText(DATA.alamatHadiah);alert("Alamat berhasil disalin");}
-function toggleMusic(){const a=document.getElementById('music');if(a.paused)a.play();else a.pause();}
-const target=new Date(DATA.countdown).getTime();
-setInterval(()=>{let x=Math.max(target-Date.now(),0);d.textContent=Math.floor(x/86400000);h.textContent=Math.floor(x/3600000)%24;m.textContent=Math.floor(x/60000)%60;s.textContent=Math.floor(x/1000)%60},1000);
-const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.1});
-document.querySelectorAll('.reveal').forEach(x=>io.observe(x));setData();
-</script>
-
-<script id="premium5-observer">
-(function(){
-  const items=document.querySelectorAll('.reveal');
-  if(!items.length) return;
-  if(!('IntersectionObserver' in window)){
-    items.forEach(x=>x.classList.add('show'));
-    return;
-  }
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('show');
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  items.forEach(x=>io.observe(x));
-})();
-</script>
-
-</body>
-</html>
+function copyText(id){navigator.clipboard.writeText(document.getElementB
